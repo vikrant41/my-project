@@ -5,6 +5,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -12,7 +19,6 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-yellow-50 opacity-50 z-0"></div>
       
-      {/* Decorative elements */}
       <div className="absolute top-20 right-10 w-64 h-64 bg-yellow-200 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-yellow-300 rounded-full blur-3xl opacity-20"></div>
       
@@ -31,11 +37,25 @@ const Hero = () => {
               Unlock the hidden patterns in your life with GlamVybe's expert numerology and Vastu services. Transform your future with our personalized consultations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button className="bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-8 py-6 h-auto">
+              <Button 
+                size="lg" 
+                className="bg-yellow-500 hover:bg-yellow-600 text-black text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-6 h-auto"
+                onClick={scrollToContact}
+              >
                 Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
-              <Button variant="outline" className="border-yellow-500 text-yellow-700 hover:bg-yellow-50 text-lg px-8 py-6 h-auto">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-yellow-500 text-yellow-700 hover:bg-yellow-50 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-6 h-auto"
+                onClick={() => {
+                  const servicesSection = document.getElementById("services");
+                  if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+              >
                 Learn More
               </Button>
             </div>
