@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "@/components/Navbar";
@@ -9,6 +8,7 @@ import ContactForm from "@/components/ContactForm";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import UniverseBackground from "@/components/UniverseBackground"; // ⭐ NEW LINE
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -24,11 +24,13 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background">
+      <UniverseBackground /> {/* ⭐ ADDED BACKGROUND HERE */}
+
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-yellow-500 z-50 origin-left"
         style={{ scaleX }}
       />
-      
+
       <Navbar />
       <Hero />
       <Services />
@@ -37,8 +39,7 @@ function App() {
       <ContactForm />
       <Footer />
       <Toaster />
-      
-      {/* Back to top button */}
+
       <motion.button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="fixed bottom-6 right-6 p-3 rounded-full bg-yellow-500 text-black shadow-lg z-40 hover:bg-yellow-600 transition-colors"
