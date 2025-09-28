@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import LogoImage from "../assets/logo.jpg"; // ⭐ IMPORTED LOCAL IMAGE
+import LogoImage from "../assets/logo.jpg"; // Corrected image import
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,7 @@ const Navbar = () => {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
     if (isOpen) {
-      toggleMenu();
+      toggleMenu(); 
     }
   };
 
@@ -56,7 +56,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2">
             <img
-              src={LogoImage} // ⭐ Using imported variable
+              src={LogoImage} // Logo is now correctly referenced
               alt="GlamVybe Logo"
               className="h-12 w-auto"
             />
@@ -66,7 +66,6 @@ const Navbar = () => {
             </div>
           </a>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
@@ -77,16 +76,11 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button
-              size="sm"
-              className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2"
-              onClick={scrollToContact}
-            >
+            <Button size="sm" className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2" onClick={scrollToContact}>
               Get Consultation
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden text-foreground focus:outline-none"
             onClick={toggleMenu}
@@ -96,7 +90,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -111,16 +104,12 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className="text-foreground hover:text-yellow-600 font-medium py-2 transition-colors"
-                  onClick={toggleMenu}
+                  onClick={toggleMenu} 
                 >
                   {link.name}
                 </a>
               ))}
-              <Button
-                size="sm"
-                className="bg-yellow-500 hover:bg-yellow-600 text-black w-full py-2"
-                onClick={scrollToContact}
-              >
+              <Button size="sm" className="bg-yellow-500 hover:bg-yellow-600 text-black w-full py-2" onClick={scrollToContact}>
                 Get Consultation
               </Button>
             </div>
