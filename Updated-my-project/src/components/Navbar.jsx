@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LogoImage from "../assets/logo.jpg"; // ⭐ IMPORTED LOCAL IMAGE
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,7 @@ const Navbar = () => {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
     if (isOpen) {
-      toggleMenu(); 
+      toggleMenu();
     }
   };
 
@@ -46,17 +46,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={\`fixed top-0 left-0 right-0 z-50 transition-all duration-300 $\{
         scrolled
           ? "bg-white/90 backdrop-blur-md shadow-md py-2"
           : "bg-transparent py-4"
-      }`}
+      }\`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2">
             <img
-              src="https://storage.googleapis.com/hostinger-horizons-assets-prod/425244c5-e8bb-4589-aff0-8bb9a2a339a3/bad87dc20500454ccebdaa6650d431fa.jpg"
+              src={LogoImage} // ⭐ Using imported variable
               alt="GlamVybe Logo"
               className="h-12 w-auto"
             />
@@ -66,6 +66,7 @@ const Navbar = () => {
             </div>
           </a>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
@@ -76,11 +77,16 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button size="sm" className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2" onClick={scrollToContact}>
+            <Button
+              size="sm"
+              className="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2"
+              onClick={scrollToContact}
+            >
               Get Consultation
             </Button>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden text-foreground focus:outline-none"
             onClick={toggleMenu}
@@ -90,6 +96,7 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -104,12 +111,16 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className="text-foreground hover:text-yellow-600 font-medium py-2 transition-colors"
-                  onClick={toggleMenu} 
+                  onClick={toggleMenu}
                 >
                   {link.name}
                 </a>
               ))}
-              <Button size="sm" className="bg-yellow-500 hover:bg-yellow-600 text-black w-full py-2" onClick={scrollToContact}>
+              <Button
+                size="sm"
+                className="bg-yellow-500 hover:bg-yellow-600 text-black w-full py-2"
+                onClick={scrollToContact}
+              >
                 Get Consultation
               </Button>
             </div>
