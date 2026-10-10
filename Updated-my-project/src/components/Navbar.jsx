@@ -62,7 +62,7 @@ const Navbar = () => {
             />
             <div>
               <h1 className="text-xl font-bold text-yellow-700">GlamVybe</h1>
-              <p className="text-xs text-yellow-600">Mirage</p>
+              <p className="text-xs text-yellow-600">Horizon</p>
             </div>
           </a>
 
