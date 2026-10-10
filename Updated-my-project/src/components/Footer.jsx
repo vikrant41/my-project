@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
-import LogoImage from "../assets/logo.jpg";
+import LogoImage from "../../assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
               <img
                 src={LogoImage}
                 alt="GlamVybe Logo"
-                className="h-12 w-auto bg-white rounded-full p-1"
+                className="h-12 w-12 object-contain bg-white rounded-full p-1"
               />
               <div>
                 <h2 className="text-xl font-bold text-white">GlamVybe</h2>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import LogoImage from "../assets/logo.jpg"; // Corrected image import
+import LogoImage from "../../assets/logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,7 +58,7 @@ const Navbar = () => {
             <img
               src={LogoImage} // Logo is now correctly referenced
               alt="GlamVybe Logo"
-              className="h-12 w-auto"
+              className="h-12 w-12 object-contain"
             />
             <div>
               <h1 className="text-xl font-bold text-yellow-700">GlamVybe</h1>
