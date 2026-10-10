@@ -47,7 +47,7 @@ const ContactFormFields = ({ formData, handleChange, errors }) => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="9537351125"
+              placeholder="9537913130"
               className={errors.phone ? "border-red-500" : "border-yellow-200"}
             />
           </FormControl>
