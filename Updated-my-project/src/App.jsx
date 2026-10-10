@@ -19,7 +19,7 @@ function App() {
   });
 
   useEffect(() => {
-    document.title = "GlamVybe - Mirage | Numerology & Vastu Services";
+    document.title = "GlamVybe - Horizon | Numerology & Vastu Services";
   }, []);
 
   return (
