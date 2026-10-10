@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
+import LogoImage from "../assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -11,13 +12,13 @@ const Footer = () => {
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="https://storage.googleapis.com/hostinger-horizons-assets-prod/425244c5-e8bb-4589-aff0-8bb9a2a339a3/bad87dc20500454ccebdaa6650d431fa.jpg"
+                src={LogoImage}
                 alt="GlamVybe Logo"
                 className="h-12 w-auto bg-white rounded-full p-1"
               />
               <div>
                 <h2 className="text-xl font-bold text-white">GlamVybe</h2>
-                <p className="text-xs text-yellow-300">Mirage</p>
+                <p className="text-xs text-yellow-300">Horizon</p>
               </div>
             </div>
             <p className="text-yellow-100 mb-6">
@@ -107,7 +108,7 @@ const Footer = () => {
         
         <div className="border-t border-yellow-700 mt-12 pt-8 text-center">
           <p className="text-yellow-200">
-            &copy; {new Date().getFullYear()} GlamVybe Mirage. All rights reserved.
+            &copy; {new Date().getFullYear()} GlamVybe Horizon. All rights reserved.
           </p>
         </div>
       </div>
